@@ -1,8 +1,8 @@
 {
-    "name": "okamos/php-ses",
+    "name": "erenkucukersoftware/php-ses",
     "description": "An Amazon SES api for PHP. Support signature version 4",
     "keywords": ["amazon", "aws", "ses", "api"],
-    "homepage": "https://github.com/okamos/php-ses",
+    "homepage": "https://github.com/erenkucukersoftware/php-ses",
     "license": "MIT",
     "type": "library",
     "authors": [
