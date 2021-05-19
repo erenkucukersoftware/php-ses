@@ -1,4 +1,10 @@
 <?php
+
+
+
+use Illuminate\Support\Facades\Config;
+
+
 /**
  * SimpleEmailService Class Doc Comment.
  *
@@ -45,9 +51,10 @@ class SimpleEmailService
      */
     public function __construct($access_key, $secret_key, $region = 'us-east-1')
     {
-        $this->_aws_key = $access_key;
-        $this->_aws_secret = $secret_key;
-        $this->_region = $region;
+        
+        $this->_aws_key = (!empty(config('api.aws_access_key_id'))) ? config('api.aws_access_key_id'):$access_key;
+        $this->_aws_secret = (!empty(config('api.aws_secret_access_key'))) ? config('api.aws_secret_access_key'):$secret_key;
+        $this->_region = (!empty(config('api.aws_default_region'))) ? config('api.aws_default_region') : $region;
 
         $this->_host = self::SERVICE . '.' . $this->_region . '.' . self::DOMAIN;
         $this->_endpoint = 'https://' . self::SERVICE . '.' . $this->_region . '.' . self::DOMAIN;
