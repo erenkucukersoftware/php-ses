@@ -49,7 +49,7 @@ class SimpleEmailService
      * @param string $secret_key AWS secret_access_key.
      * @param string $region     AWS region. default us-east-1.
      */
-    public function __construct($access_key, $secret_key, $region = 'us-east-1')
+    public function __construct($access_key = null, $secret_key = null, $region = 'us-east-1')
     {
         
         $this->_aws_key = (!empty(config('api.aws_access_key_id'))) ? config('api.aws_access_key_id'):$access_key;
